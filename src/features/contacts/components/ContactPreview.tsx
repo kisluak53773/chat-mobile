@@ -31,6 +31,7 @@ export const ContactPreview: FC<IContactPreviewProps> = ({
     <ContactItem
       type="contacts"
       user={user}
+      image={image}
       room={rooms.find((room) =>
         room.participantsArray.includes(contact.email)
       )}

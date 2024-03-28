@@ -8,7 +8,7 @@ export const Avatar: FC<IAvatarProps> = ({ user }) => {
       className=" w-[65px] h-[65px] rounded-[65px] mb-[5px]"
       resizeMode="cover"
       source={
-        user.photoURL
+        'photoURL' in user && user.photoURL
           ? { uri: user.photoURL }
           : require('assets/images/avatar-palceholder.png')
       }

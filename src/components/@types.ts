@@ -2,14 +2,14 @@ import { User } from 'firebase/auth';
 import { type IContact } from '@/hooks';
 
 export interface IAvatarProps {
-  user: any;
+  user: User | IContact;
 }
 
 //TODO: remove any
 export interface IContactItemProps {
   type?: string;
-  image?: string;
-  user: any;
+  image: string;
+  user: User | IContact;
   room?: any;
   time?: string;
   description?: string;

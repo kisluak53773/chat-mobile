@@ -12,7 +12,7 @@ export const ContactItem: FC<IContactItemProps> = ({ user }) => {
       <Avatar user={user} />
       <View className=" items-center justify-center flex-1">
         <Text className=" text-text font-bold text-[16px]">
-          {user.contactName || user.displayName}
+          {'contactName' in user ? user.contactName : user.displayName}
         </Text>
       </View>
     </TouchableOpacity>
