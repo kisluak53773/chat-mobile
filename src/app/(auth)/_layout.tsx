@@ -1,3 +1,4 @@
+import { COLORS } from '@/constants';
 import { Stack } from 'expo-router';
 
 export default function AuthLayout() {
@@ -10,6 +11,15 @@ export default function AuthLayout() {
       <Stack.Screen
         name="register"
         options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="profile"
+        options={{
+          headerStyle: {
+            backgroundColor: COLORS.foreground,
+          },
+          headerTintColor: COLORS.white,
+        }}
       />
     </Stack>
   );

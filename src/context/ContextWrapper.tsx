@@ -1,4 +1,3 @@
-import { IUser } from '@/types';
 import {
   createContext,
   FC,
@@ -11,10 +10,12 @@ import { type IGlobalContext } from '@/types';
 const GlobalContext = createContext(null);
 
 export const ContextWrapper: FC<PropsWithChildren> = ({ children }) => {
-  const [currUser, setCurrUser] = useState<IUser | null>(null);
+  const [rooms, setRooms] = useState<any>([]);
+  const [unfilteredRooms, setUnfilteredRooms] = useState([]);
 
   return (
-    <GlobalContext.Provider value={{ currUser, setCurrUser }}>
+    <GlobalContext.Provider
+      value={{ rooms, setRooms, unfilteredRooms, setUnfilteredRooms }}>
       {children}
     </GlobalContext.Provider>
   );

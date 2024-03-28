@@ -50,7 +50,7 @@ export const ImagePicker: FC<IImagePickerProps> = ({
       ) : (
         <Image
           source={{ uri: selectedImage }}
-          style={{ width: '100%', height: '100%', borderRadius: 120 }}
+          className=" w-[100%] h-[100%] rounded-[120px]"
         />
       )}
     </TouchableOpacity>
