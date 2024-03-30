@@ -14,6 +14,7 @@ import {
   updateDoc,
   where,
 } from 'firebase/firestore';
+import { useRouter } from 'expo-router';
 
 interface IUserData {
   displayName: string;
@@ -29,6 +30,7 @@ export default function Photo() {
   );
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const [querryUser, setQuerryUser] = useState(null);
+  const router = useRouter();
 
   useEffect(() => {
     const unsubscribe = onSnapshot(usersQuerry, (querySnapshot) => {
@@ -42,7 +44,10 @@ export default function Photo() {
     return () => unsubscribe();
   }, []);
 
-  const handleSignOut = async () => await signOut(auth);
+  const handleSignOut = async () => {
+    await signOut(auth);
+    router.replace('/login');
+  };
 
   const handleSave = async () => {
     if (selectedImage) {
