@@ -1,6 +1,5 @@
 import { Tabs } from 'expo-router';
 import { Entypo } from '@expo/vector-icons';
-import { FontAwesome } from '@expo/vector-icons';
 import { CHAT_HEADER } from '@/constants';
 import { Fontisto } from '@expo/vector-icons';
 
@@ -23,7 +22,7 @@ export default function AuthLayout() {
         }}
       />
       <Tabs.Screen
-        name="photo"
+        name="profile"
         options={{
           headerTitle: 'Profile',
           title: 'Profile',
