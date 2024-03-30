@@ -44,8 +44,7 @@ export default function ChatItem() {
   const [modalVisible, setModalVisible] = useState(false);
   const [selectedImageView, setSeletedImageView] = useState('');
   const { user } = useLocalSearchParams();
-  const { companion, selectedRoom, setSelectedRoom, image } =
-    useGlobalContext();
+  const { companion, selectedRoom } = useGlobalContext();
   const { currentUser } = auth;
   const randomId = useId();
   const senderUser = currentUser.photoURL

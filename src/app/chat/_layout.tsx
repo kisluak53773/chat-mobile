@@ -2,6 +2,7 @@ import { Tabs } from 'expo-router';
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { CHAT_HEADER } from '@/constants';
+import { Fontisto } from '@expo/vector-icons';
 
 export default function AuthLayout() {
   return (
@@ -24,12 +25,12 @@ export default function AuthLayout() {
       <Tabs.Screen
         name="photo"
         options={{
-          headerTitle: 'Photo',
-          title: 'Photo',
+          headerTitle: 'Profile',
+          title: 'Profile',
           ...CHAT_HEADER,
           tabBarIcon: ({ color }) => (
-            <FontAwesome
-              name="photo"
+            <Fontisto
+              name="person"
               size={24}
               color={color}
             />
