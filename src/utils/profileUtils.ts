@@ -2,6 +2,7 @@ import * as ImagePicker from 'expo-image-picker';
 import { ref, uploadBytes, getDownloadURL } from 'firebase/storage';
 import { storage } from '@/config';
 import { nanoid } from 'nanoid';
+import 'react-native-get-random-values';
 
 export const pickImage = async () => {
   const result = await ImagePicker.launchCameraAsync();
@@ -13,7 +14,7 @@ export const askForPermission = async () => {
   return status;
 };
 
-export async function uploadImage(uri: string, path: string, fName: string) {
+export async function uploadImage(uri: string, path: string, fName?: string) {
   const blob = await new Promise((resolve, reject) => {
     const xhr = new XMLHttpRequest();
     xhr.onload = function () {

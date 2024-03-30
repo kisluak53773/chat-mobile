@@ -9,7 +9,7 @@ export const ContactPreview: FC<IContactPreviewProps> = ({
   image,
   contact,
 }) => {
-  const { rooms } = useGlobalContext();
+  const { unfilteredRooms } = useGlobalContext();
   const [user, setUser] = useState(contact);
 
   useEffect(() => {
@@ -32,7 +32,7 @@ export const ContactPreview: FC<IContactPreviewProps> = ({
       type="contacts"
       user={user}
       image={image}
-      room={rooms.find((room) =>
+      room={unfilteredRooms.find((room) =>
         room.participantsArray.includes(contact.email)
       )}
     />

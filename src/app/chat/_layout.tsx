@@ -1,7 +1,7 @@
-import { COLORS } from '@/constants';
 import { Tabs } from 'expo-router';
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
+import { CHAT_HEADER } from '@/constants';
 
 export default function AuthLayout() {
   return (
@@ -11,10 +11,7 @@ export default function AuthLayout() {
         options={{
           headerTitle: 'Chat',
           title: 'Chat',
-          headerStyle: {
-            backgroundColor: COLORS.foreground,
-          },
-          headerTintColor: COLORS.white,
+          ...CHAT_HEADER,
           tabBarIcon: ({ color }) => (
             <Entypo
               name="chat"
@@ -29,10 +26,7 @@ export default function AuthLayout() {
         options={{
           headerTitle: 'Photo',
           title: 'Photo',
-          headerStyle: {
-            backgroundColor: COLORS.foreground,
-          },
-          headerTintColor: COLORS.white,
+          ...CHAT_HEADER,
           tabBarIcon: ({ color }) => (
             <FontAwesome
               name="photo"
@@ -40,18 +34,6 @@ export default function AuthLayout() {
               color={color}
             />
           ),
-        }}
-      />
-      <Tabs.Screen
-        name="contacts"
-        options={{
-          href: null,
-          headerTitle: 'Contacts',
-          title: 'Photo',
-          headerStyle: {
-            backgroundColor: COLORS.foreground,
-          },
-          headerTintColor: COLORS.white,
         }}
       />
     </Tabs>

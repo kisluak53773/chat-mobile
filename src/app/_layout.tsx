@@ -14,8 +14,6 @@ function RootLayoutConfig() {
   const [loading, setLoading] = useState<boolean>(true);
   const router = useRouter();
 
-  console.log(currUser);
-
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, (user) => {
       setLoading(false);
@@ -44,6 +42,10 @@ function RootLayoutConfig() {
       />
       <Stack.Screen
         name="(auth)"
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="chatItems"
         options={{ headerShown: false }}
       />
     </Stack>

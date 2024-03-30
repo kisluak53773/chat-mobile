@@ -9,3 +9,10 @@ export const COLORS = {
   secondaryText: '#757575',
   iconGray: '#717171',
 };
+
+export const CHAT_HEADER = {
+  headerStyle: {
+    backgroundColor: COLORS.foreground,
+  },
+  headerTintColor: COLORS.white,
+};

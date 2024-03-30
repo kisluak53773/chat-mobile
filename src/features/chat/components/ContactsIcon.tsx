@@ -8,7 +8,7 @@ export const ContactsIcon: FC = () => {
 
   return (
     <TouchableOpacity
-      onPress={() => router.push('/chat/contacts')}
+      onPress={() => router.push('/chatItems/contacts')}
       className=" absolute right-[20px] bottom-[20px] rounded-[60px] w-[60px] h-[60px] bg-secondary justify-center items-center">
       <AntDesign
         name="contacts"
